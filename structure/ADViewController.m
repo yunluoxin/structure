@@ -7,7 +7,8 @@
 //
 
 #import "ADViewController.h"
-
+#import "RootViewController.h"
+#import "WebViewController.h"
 @interface ADViewController ()
 {
     NSTimer *_timer ;
@@ -33,6 +34,9 @@
     label.font = [UIFont systemFontOfSize:20] ;
     label.textColor = [UIColor greenColor] ;
     label.textAlignment = NSTextAlignmentCenter ;
+    label.userInteractionEnabled = YES ;
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAD:)] ;
+    [label addGestureRecognizer:tap] ;
     
     UIButton * stepBtn = [UIButton buttonWithType:UIButtonTypeCustom] ;
     stepBtn.frame = CGRectMake(0, 300, 100, 50) ;
@@ -69,9 +73,6 @@ static int count = 3 ;      //倒计时3s
     self.countLabel.text = [NSString stringWithFormat:@"%d",count] ;
     
     if (count <= 0) {
-        [_timer invalidate] ;
-        _timer = nil ;
-        count = 3 ;
         [self step:nil] ;
     }
     
@@ -81,9 +82,28 @@ static int count = 3 ;      //倒计时3s
 
 - (void)step:(id)sender
 {
-    [self dismissViewControllerAnimated:NO completion:NULL] ;
+    [_timer invalidate] ;
+    _timer = nil ;
+    count = 3 ;
+    
+//    [self dismissViewControllerAnimated:NO completion:NULL] ;
+    [self removeFromParentViewController] ;
+    [self.view removeFromSuperview] ;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:DDCheckLoginNotification object:nil] ;
+    [[NSNotificationCenter defaultCenter] postNotificationName:DDCheckUpdateNotification object:nil] ;
 }
 
+- (void)tapAD:(UITapGestureRecognizer *)tap
+{
+    
+    WebViewController * web = [WebViewController new] ;
+    UIViewController *vc = [self cycleFindMainVC:[RootViewController sharedViewController].tabbarVC ] ;
+                            NSLog(@"%@",vc) ;
+    [vc.navigationController pushViewController:web animated:YES] ;
+    
+    [self step:nil] ;
+}
 
 
 - (UILabel *)countLabel
@@ -99,5 +119,39 @@ static int count = 3 ;      //倒计时3s
         [self.view addSubview:_countLabel] ;
     }
     return _countLabel ;
+}
+
+
+- (void)dealloc
+{
+    NSLog(@"广告VC被销毁") ;
+}
+
+- (UIViewController *)cycleFindMainVC:(UIViewController *)rootVC
+{
+    if (rootVC.presentedViewController) {
+        rootVC = rootVC.presentedViewController ;
+        return [self cycleFindMainVC:rootVC] ;
+    }
+    
+    if ([rootVC isKindOfClass:[UITabBarController class]]) {
+        UITabBarController * tab = (UITabBarController *)rootVC ;
+        rootVC = tab.selectedViewController ;
+        return [self cycleFindMainVC:rootVC] ;
+    }
+    
+    if ([rootVC isKindOfClass:[UINavigationController class]]) {
+        UINavigationController * nav = (UINavigationController *)rootVC ;
+        rootVC = nav.topViewController ;
+        return [self cycleFindMainVC:rootVC] ;
+    }
+    
+    if (rootVC.childViewControllers.count > 0) {
+        rootVC = [rootVC.childViewControllers lastObject] ;
+        return [self cycleFindMainVC:rootVC] ;
+    }
+    
+    return rootVC ;
+    
 }
 @end

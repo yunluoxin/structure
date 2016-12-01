@@ -19,7 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    
+    [NSThread sleepForTimeInterval:1] ;
     self.window = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds] ;
     
     DDNavigationController * nav = [[DDNavigationController alloc]initWithRootViewController:[RootViewController sharedViewController] ] ;
@@ -51,10 +51,15 @@
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
-
-        UIViewController * vc = [self cycleFindMainVC:[RootViewController sharedViewController] ] ;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        UIViewController * vc = [self cycleFindMainVC:[RootViewController sharedViewController].tabbarVC ] ;
         NSLog(@"local--notification%@",vc) ;
         [vc.navigationController pushViewController:[WebViewController new] animated:YES] ;
+        
+    });
+    
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
