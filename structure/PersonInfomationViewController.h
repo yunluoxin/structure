@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PersonInfomationViewController.h
 //  structure
 //
 //  Created by ZhangXiaodong on 16/11/6.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface PersonInfomationViewController : UIViewController
 
 @end
-

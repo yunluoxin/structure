@@ -9,10 +9,18 @@
 /* Begin PBXBuildFile section */
 		4E27D7E41DCF46B000D8DA2C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E27D7E31DCF46B000D8DA2C /* main.m */; };
 		4E27D7E71DCF46B000D8DA2C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E27D7E61DCF46B000D8DA2C /* AppDelegate.m */; };
-		4E27D7EA1DCF46B000D8DA2C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E27D7E91DCF46B000D8DA2C /* ViewController.m */; };
 		4E27D7ED1DCF46B000D8DA2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E27D7EB1DCF46B000D8DA2C /* Main.storyboard */; };
 		4E27D7EF1DCF46B000D8DA2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E27D7EE1DCF46B000D8DA2C /* Assets.xcassets */; };
 		4E27D7F21DCF46B000D8DA2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E27D7F01DCF46B000D8DA2C /* LaunchScreen.storyboard */; };
+		4E27D7FB1DCF471100D8DA2C /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E27D7FA1DCF471100D8DA2C /* RootViewController.m */; };
+		4E27D7FE1DCF479200D8DA2C /* DDTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E27D7FD1DCF479200D8DA2C /* DDTabbarController.m */; };
+		4E27D8011DCF47B100D8DA2C /* DDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E27D8001DCF47B100D8DA2C /* DDNavigationController.m */; };
+		4E27D8041DCF483400D8DA2C /* MyHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E27D8031DCF483400D8DA2C /* MyHomeViewController.m */; };
+		4E27D8071DCF484700D8DA2C /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E27D8061DCF484700D8DA2C /* HomePageViewController.m */; };
+		4E27D80A1DCF4E2200D8DA2C /* PersonInfomationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E27D8091DCF4E2200D8DA2C /* PersonInfomationViewController.m */; };
+		4E27D80D1DCF500A00D8DA2C /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E27D80C1DCF500A00D8DA2C /* SignInViewController.m */; };
+		4E718CAE1DD1F30300EF2D49 /* ADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E718CAD1DD1F30300EF2D49 /* ADViewController.m */; };
+		4E718CB11DD20D6600EF2D49 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E718CB01DD20D6600EF2D49 /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +28,28 @@
 		4E27D7E31DCF46B000D8DA2C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4E27D7E51DCF46B000D8DA2C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4E27D7E61DCF46B000D8DA2C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4E27D7E81DCF46B000D8DA2C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4E27D7E91DCF46B000D8DA2C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4E27D7EC1DCF46B000D8DA2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4E27D7EE1DCF46B000D8DA2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E27D7F11DCF46B000D8DA2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E27D7F31DCF46B000D8DA2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E27D7F91DCF471100D8DA2C /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		4E27D7FA1DCF471100D8DA2C /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		4E27D7FC1DCF479200D8DA2C /* DDTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTabbarController.h; sourceTree = "<group>"; };
+		4E27D7FD1DCF479200D8DA2C /* DDTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTabbarController.m; sourceTree = "<group>"; };
+		4E27D7FF1DCF47B100D8DA2C /* DDNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDNavigationController.h; sourceTree = "<group>"; };
+		4E27D8001DCF47B100D8DA2C /* DDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDNavigationController.m; sourceTree = "<group>"; };
+		4E27D8021DCF483400D8DA2C /* MyHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyHomeViewController.h; sourceTree = "<group>"; };
+		4E27D8031DCF483400D8DA2C /* MyHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyHomeViewController.m; sourceTree = "<group>"; };
+		4E27D8051DCF484700D8DA2C /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
+		4E27D8061DCF484700D8DA2C /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
+		4E27D8081DCF4E2200D8DA2C /* PersonInfomationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonInfomationViewController.h; sourceTree = "<group>"; };
+		4E27D8091DCF4E2200D8DA2C /* PersonInfomationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonInfomationViewController.m; sourceTree = "<group>"; };
+		4E27D80B1DCF500A00D8DA2C /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
+		4E27D80C1DCF500A00D8DA2C /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
+		4E718CAC1DD1F30300EF2D49 /* ADViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADViewController.h; sourceTree = "<group>"; };
+		4E718CAD1DD1F30300EF2D49 /* ADViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADViewController.m; sourceTree = "<group>"; };
+		4E718CAF1DD20D6600EF2D49 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		4E718CB01DD20D6600EF2D49 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,13 +84,29 @@
 			children = (
 				4E27D7E51DCF46B000D8DA2C /* AppDelegate.h */,
 				4E27D7E61DCF46B000D8DA2C /* AppDelegate.m */,
-				4E27D7E81DCF46B000D8DA2C /* ViewController.h */,
-				4E27D7E91DCF46B000D8DA2C /* ViewController.m */,
 				4E27D7EB1DCF46B000D8DA2C /* Main.storyboard */,
 				4E27D7EE1DCF46B000D8DA2C /* Assets.xcassets */,
 				4E27D7F01DCF46B000D8DA2C /* LaunchScreen.storyboard */,
 				4E27D7F31DCF46B000D8DA2C /* Info.plist */,
 				4E27D7E21DCF46B000D8DA2C /* Supporting Files */,
+				4E27D7F91DCF471100D8DA2C /* RootViewController.h */,
+				4E27D7FA1DCF471100D8DA2C /* RootViewController.m */,
+				4E27D7FC1DCF479200D8DA2C /* DDTabbarController.h */,
+				4E27D7FD1DCF479200D8DA2C /* DDTabbarController.m */,
+				4E27D7FF1DCF47B100D8DA2C /* DDNavigationController.h */,
+				4E27D8001DCF47B100D8DA2C /* DDNavigationController.m */,
+				4E27D8021DCF483400D8DA2C /* MyHomeViewController.h */,
+				4E27D8031DCF483400D8DA2C /* MyHomeViewController.m */,
+				4E27D8051DCF484700D8DA2C /* HomePageViewController.h */,
+				4E27D8061DCF484700D8DA2C /* HomePageViewController.m */,
+				4E27D8081DCF4E2200D8DA2C /* PersonInfomationViewController.h */,
+				4E27D8091DCF4E2200D8DA2C /* PersonInfomationViewController.m */,
+				4E27D80B1DCF500A00D8DA2C /* SignInViewController.h */,
+				4E27D80C1DCF500A00D8DA2C /* SignInViewController.m */,
+				4E718CAC1DD1F30300EF2D49 /* ADViewController.h */,
+				4E718CAD1DD1F30300EF2D49 /* ADViewController.m */,
+				4E718CAF1DD20D6600EF2D49 /* WebViewController.h */,
+				4E718CB01DD20D6600EF2D49 /* WebViewController.m */,
 			);
 			path = structure;
 			sourceTree = "<group>";
@@ -149,9 +189,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E27D7EA1DCF46B000D8DA2C /* ViewController.m in Sources */,
+				4E27D7FE1DCF479200D8DA2C /* DDTabbarController.m in Sources */,
+				4E27D8011DCF47B100D8DA2C /* DDNavigationController.m in Sources */,
+				4E718CB11DD20D6600EF2D49 /* WebViewController.m in Sources */,
+				4E27D80A1DCF4E2200D8DA2C /* PersonInfomationViewController.m in Sources */,
 				4E27D7E71DCF46B000D8DA2C /* AppDelegate.m in Sources */,
+				4E27D8041DCF483400D8DA2C /* MyHomeViewController.m in Sources */,
+				4E27D8071DCF484700D8DA2C /* HomePageViewController.m in Sources */,
+				4E27D7FB1DCF471100D8DA2C /* RootViewController.m in Sources */,
+				4E27D80D1DCF500A00D8DA2C /* SignInViewController.m in Sources */,
 				4E27D7E41DCF46B000D8DA2C /* main.m in Sources */,
+				4E718CAE1DD1F30300EF2D49 /* ADViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +348,7 @@
 				4E27D7F81DCF46B000D8DA2C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
