@@ -14,6 +14,11 @@
 
 @implementation PersonInfomationViewController
 
++ (void)load
+{
+    [UrlRounter registerController:self withMappingUrl:@"info" ];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -24,7 +29,7 @@
     self.tabBarItem.badgeValue =  @"1" ;
     
     
-
+    NSLog(@"name-------->%@",self.name) ;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -57,6 +62,10 @@
 //    NSLog(@"%@",[self cycleFindMainVC:[UIApplication sharedApplication].keyWindow.rootViewController]) ;
 }
 
-
-
+//+ (NSDictionary *)dd_replaceKeyFromPropertyName
+//{
+//    return @{
+//             @"ad":@"name"
+//             };
+//}
 @end

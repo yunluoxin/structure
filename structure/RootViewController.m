@@ -13,7 +13,7 @@
 #import "SignInViewController.h"
 
 #import "ADViewController.h"
-
+#import "DDTaskManager.h"
 @interface RootViewController ()
 {
     NSDate * _lastTimeShow ;
@@ -32,7 +32,6 @@
         obj = [RootViewController new] ;
         
         //注册APP进入"后台"和"前台"的通知
-        [[NSNotificationCenter defaultCenter] addObserver:obj selector:@selector(active:) name:UIApplicationWillEnterForegroundNotification object:nil] ;
         [[NSNotificationCenter defaultCenter] addObserver:obj selector:@selector(active:) name:UIApplicationDidBecomeActiveNotification object:nil] ;
         [[NSNotificationCenter defaultCenter] addObserver:obj selector:@selector(resignActive:) name:UIApplicationWillResignActiveNotification object:nil] ;
     
@@ -78,8 +77,10 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         //刚登录APP 或者 离上一次使用APP超时了，就出现广告
-        if (!_lastTimeShow || [[NSDate date] timeIntervalSinceDate:_lastTimeShow] > 10 ) {
+        if (!_lastTimeShow || [[NSDate date] timeIntervalSinceDate:_lastTimeShow] > 5 ) {
             [self presentViewController:[ADViewController new] animated:NO completion:NULL] ;
+        }else{
+            [DDTaskManager executeAllTasks] ;
         }
         
     });

@@ -7,7 +7,7 @@
 //
 
 #import "ADViewController.h"
-
+#import "DDTaskManager.h"
 @interface ADViewController ()
 {
     NSTimer *_timer ;
@@ -69,9 +69,6 @@ static int count = 3 ;      //倒计时3s
     self.countLabel.text = [NSString stringWithFormat:@"%d",count] ;
     
     if (count <= 0) {
-        [_timer invalidate] ;
-        _timer = nil ;
-        count = 3 ;
         [self step:nil] ;
     }
     
@@ -81,7 +78,12 @@ static int count = 3 ;      //倒计时3s
 
 - (void)step:(id)sender
 {
-    [self dismissViewControllerAnimated:NO completion:NULL] ;
+    [_timer invalidate] ;
+    _timer = nil ;
+    count = 3 ;
+    [self dismissViewControllerAnimated:NO completion:^{
+        [DDTaskManager executeAllTasks] ;
+    }] ;
 }
 
 

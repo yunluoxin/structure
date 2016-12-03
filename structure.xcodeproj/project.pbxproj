@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E27CE011DF2FED50063D10A /* DD_WrongPage_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E27CDFA1DF2FED50063D10A /* DD_WrongPage_ViewController.m */; };
+		4E27CE021DF2FED50063D10A /* DDTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E27CDFC1DF2FED50063D10A /* DDTask.m */; };
+		4E27CE031DF2FED50063D10A /* DDTaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E27CDFE1DF2FED50063D10A /* DDTaskManager.m */; };
+		4E27CE041DF2FED50063D10A /* UrlRounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E27CE001DF2FED50063D10A /* UrlRounter.m */; };
+		4E27CE071DF30F7F0063D10A /* UIViewController+UrlRounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E27CE061DF30F7F0063D10A /* UIViewController+UrlRounter.m */; };
 		4E27D7E41DCF46B000D8DA2C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E27D7E31DCF46B000D8DA2C /* main.m */; };
 		4E27D7E71DCF46B000D8DA2C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E27D7E61DCF46B000D8DA2C /* AppDelegate.m */; };
 		4E27D7ED1DCF46B000D8DA2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E27D7EB1DCF46B000D8DA2C /* Main.storyboard */; };
@@ -24,6 +29,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E27CDF91DF2FED50063D10A /* DD_WrongPage_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DD_WrongPage_ViewController.h; sourceTree = "<group>"; };
+		4E27CDFA1DF2FED50063D10A /* DD_WrongPage_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DD_WrongPage_ViewController.m; sourceTree = "<group>"; };
+		4E27CDFB1DF2FED50063D10A /* DDTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTask.h; sourceTree = "<group>"; };
+		4E27CDFC1DF2FED50063D10A /* DDTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTask.m; sourceTree = "<group>"; };
+		4E27CDFD1DF2FED50063D10A /* DDTaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTaskManager.h; sourceTree = "<group>"; };
+		4E27CDFE1DF2FED50063D10A /* DDTaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTaskManager.m; sourceTree = "<group>"; };
+		4E27CDFF1DF2FED50063D10A /* UrlRounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UrlRounter.h; sourceTree = "<group>"; };
+		4E27CE001DF2FED50063D10A /* UrlRounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UrlRounter.m; sourceTree = "<group>"; };
+		4E27CE051DF30F7F0063D10A /* UIViewController+UrlRounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+UrlRounter.h"; sourceTree = "<group>"; };
+		4E27CE061DF30F7F0063D10A /* UIViewController+UrlRounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+UrlRounter.m"; sourceTree = "<group>"; };
+		4E27CE081DF30FE00063D10A /* structure.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = structure.pch; sourceTree = "<group>"; };
 		4E27D7DF1DCF46B000D8DA2C /* structure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = structure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E27D7E31DCF46B000D8DA2C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4E27D7E51DCF46B000D8DA2C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -63,6 +79,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E27CDF81DF2FED50063D10A /* Rounter(路由中心) */ = {
+			isa = PBXGroup;
+			children = (
+				4E27CDF91DF2FED50063D10A /* DD_WrongPage_ViewController.h */,
+				4E27CDFA1DF2FED50063D10A /* DD_WrongPage_ViewController.m */,
+				4E27CDFB1DF2FED50063D10A /* DDTask.h */,
+				4E27CDFC1DF2FED50063D10A /* DDTask.m */,
+				4E27CDFD1DF2FED50063D10A /* DDTaskManager.h */,
+				4E27CDFE1DF2FED50063D10A /* DDTaskManager.m */,
+				4E27CDFF1DF2FED50063D10A /* UrlRounter.h */,
+				4E27CE001DF2FED50063D10A /* UrlRounter.m */,
+				4E27CE051DF30F7F0063D10A /* UIViewController+UrlRounter.h */,
+				4E27CE061DF30F7F0063D10A /* UIViewController+UrlRounter.m */,
+			);
+			path = "Rounter(路由中心)";
+			sourceTree = "<group>";
+		};
 		4E27D7D61DCF46B000D8DA2C = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +115,7 @@
 		4E27D7E11DCF46B000D8DA2C /* structure */ = {
 			isa = PBXGroup;
 			children = (
+				4E27CDF81DF2FED50063D10A /* Rounter(路由中心) */,
 				4E27D7E51DCF46B000D8DA2C /* AppDelegate.h */,
 				4E27D7E61DCF46B000D8DA2C /* AppDelegate.m */,
 				4E27D7EB1DCF46B000D8DA2C /* Main.storyboard */,
@@ -107,6 +141,7 @@
 				4E718CAD1DD1F30300EF2D49 /* ADViewController.m */,
 				4E718CAF1DD20D6600EF2D49 /* WebViewController.h */,
 				4E718CB01DD20D6600EF2D49 /* WebViewController.m */,
+				4E27CE081DF30FE00063D10A /* structure.pch */,
 			);
 			path = structure;
 			sourceTree = "<group>";
@@ -191,15 +226,20 @@
 			files = (
 				4E27D7FE1DCF479200D8DA2C /* DDTabbarController.m in Sources */,
 				4E27D8011DCF47B100D8DA2C /* DDNavigationController.m in Sources */,
+				4E27CE071DF30F7F0063D10A /* UIViewController+UrlRounter.m in Sources */,
 				4E718CB11DD20D6600EF2D49 /* WebViewController.m in Sources */,
 				4E27D80A1DCF4E2200D8DA2C /* PersonInfomationViewController.m in Sources */,
 				4E27D7E71DCF46B000D8DA2C /* AppDelegate.m in Sources */,
 				4E27D8041DCF483400D8DA2C /* MyHomeViewController.m in Sources */,
+				4E27CE041DF2FED50063D10A /* UrlRounter.m in Sources */,
+				4E27CE031DF2FED50063D10A /* DDTaskManager.m in Sources */,
 				4E27D8071DCF484700D8DA2C /* HomePageViewController.m in Sources */,
+				4E27CE011DF2FED50063D10A /* DD_WrongPage_ViewController.m in Sources */,
 				4E27D7FB1DCF471100D8DA2C /* RootViewController.m in Sources */,
 				4E27D80D1DCF500A00D8DA2C /* SignInViewController.m in Sources */,
 				4E27D7E41DCF46B000D8DA2C /* main.m in Sources */,
 				4E718CAE1DD1F30300EF2D49 /* ADViewController.m in Sources */,
+				4E27CE021DF2FED50063D10A /* DDTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +351,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = structure/structure.pch;
 				INFOPLIST_FILE = structure/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dadong.structure;
@@ -322,6 +363,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = structure/structure.pch;
 				INFOPLIST_FILE = structure/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dadong.structure;

@@ -10,6 +10,7 @@
 #import "DDNavigationController.h"
 #import "RootViewController.h"
 #import "WebViewController.h"
+#import "DDTaskManager.h"
 @interface AppDelegate ()
 
 @end
@@ -18,7 +19,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
     
     self.window = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds] ;
     
@@ -43,7 +43,7 @@
     note.userInfo = @{
                       @"test":@"333"
                       } ;
-    note.fireDate = [NSDate dateWithTimeIntervalSinceNow:10] ;
+    note.fireDate = [NSDate dateWithTimeIntervalSinceNow:5] ;
     [application scheduleLocalNotification:note] ;
     return YES;
 }
@@ -51,10 +51,18 @@
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
-
+    if (application.applicationState == UIApplicationStateActive) {
         UIViewController * vc = [self cycleFindMainVC:[RootViewController sharedViewController] ] ;
         NSLog(@"local--notification%@",vc) ;
         [vc.navigationController pushViewController:[WebViewController new] animated:YES] ;
+    }else{
+        NSLog(@"通知任务加入到队列中") ;
+        DDTask * task = [DDTask new ];
+        task.type = DDTaskNewPageType ;
+        task.pageUrl = @"kachemama://info?ad=34&bc=12" ;
+        [DDTaskManager addTask:task] ;
+    }
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

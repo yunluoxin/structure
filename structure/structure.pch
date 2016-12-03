@@ -1,0 +1,19 @@
+//
+//  structure.pch
+//  structure
+//
+//  Created by ZhangXiaodong on 16/12/3.
+//  Copyright © 2016年 ZhangXiaodong. All rights reserved.
+//
+
+#ifndef structure_pch
+#define structure_pch
+
+#ifdef __OBJC__
+
+#import "UrlRounter.h"
+#import "RootViewController.h"
+#import "UIViewController+UrlRounter.h"
+
+#endif
+#endif /* structure_pch */
