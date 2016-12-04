@@ -19,7 +19,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
     self.window = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds] ;
     
     DDNavigationController * nav = [[DDNavigationController alloc]initWithRootViewController:[RootViewController sharedViewController] ] ;
@@ -51,6 +50,7 @@
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
+
     if (application.applicationState == UIApplicationStateActive) {
         UIViewController * vc = [self cycleFindMainVC:[RootViewController sharedViewController] ] ;
         NSLog(@"local--notification%@",vc) ;

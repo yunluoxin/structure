@@ -68,4 +68,9 @@
 //             @"ad":@"name"
 //             };
 //}
+
+- (void)dealloc
+{
+    NSLog(@"%s",__func__) ;
+}
 @end

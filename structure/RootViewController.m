@@ -14,6 +14,7 @@
 
 #import "ADViewController.h"
 #import "DDTaskManager.h"
+#import "NewFeatureViewController.h"
 @interface RootViewController ()
 {
     NSDate * _lastTimeShow ;
@@ -43,19 +44,26 @@
     [super viewDidLoad];
     
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent ;
-//    self.title = @"rootViewController" ;
+
     self.view.backgroundColor = [UIColor lightGrayColor] ;
     [self.navigationController setNavigationBarHidden:YES] ;
     
     DDTabbarController * tabbarVC = [DDTabbarController new] ;
     [self addChildViewController:tabbarVC] ;
     [self.view addSubview:tabbarVC.view] ;
+    self.tabbarVC = tabbarVC ;
     
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(network_break) name:DDNotLoginNotification object:nil] ;
+    [self registerAllNotifications] ;
     
 }
 
+- (void)registerAllNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(network_break) name:DDNotLoginNotification object:nil] ;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkLogin:) name:DDCheckLoginNotification object:nil] ;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkUpdate:) name:DDCheckUpdateNotification object:nil] ;
+    
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -76,12 +84,33 @@
 {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
-        //刚登录APP 或者 离上一次使用APP超时了，就出现广告
-        if (!_lastTimeShow || [[NSDate date] timeIntervalSinceDate:_lastTimeShow] > 5 ) {
-            [self presentViewController:[ADViewController new] animated:NO completion:NULL] ;
+        NSString * currentVersion = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"] ;
+        NSString * lastVersionKey = @"lastVersionKey" ;
+        NSString * lastValue = [[NSUserDefaults standardUserDefaults] stringForKey:lastVersionKey] ;
+        if ([currentVersion isEqualToString:lastValue]) {
+            
+            
+            //刚登录APP 或者 离上一次使用APP超时了，就出现广告
+            if (!_lastTimeShow || [[NSDate date] timeIntervalSinceDate:_lastTimeShow] > 8 ) {
+                //            [self presentViewController:[ADViewController new] animated:NO completion:NULL] ;
+                UIViewController * vc = [ADViewController new] ;
+                [self addChildViewController:vc] ;
+                [self.view addSubview:vc.view] ;
+            }else{
+                [DDTaskManager executeAllTasks] ;
+            }
+            
         }else{
-            [DDTaskManager executeAllTasks] ;
+            
+            //存储版本
+            [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:lastVersionKey] ;
+            
+            UIViewController * vc = [NewFeatureViewController new] ;
+            [self addChildViewController:vc] ;
+            [self.view addSubview:vc.view] ;
+            
         }
+
         
     });
 }
@@ -91,12 +120,19 @@
     _lastTimeShow = [NSDate date] ;
 }
 
-
-- (void)notLogin:(NSNotification *)note
+#pragma mark 检测登录
+- (void)checkLogin:(NSNotification *)note
 {
     SignInViewController * vc = [SignInViewController new] ;
     DDNavigationController * nav = [[DDNavigationController alloc]initWithRootViewController:vc] ;
     [self presentViewController:nav animated:NO completion:nil] ;
+}
+
+#pragma mark 检测是否有更新
+- (void)checkUpdate:(NSNotification *)note
+{
+    UIAlertView * alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"当前有新版本" delegate:self cancelButtonTitle:@"好的" otherButtonTitles:@"buzhid00", nil] ;
+    [alertView show] ;
 }
 
 - (void)network_break
@@ -124,3 +160,5 @@
 @end
 
 NSString * const DDNotLoginNotification = @"DDNotLoginNotification" ;
+NSString * const DDCheckLoginNotification = @"DDCheckLoginNotification" ;
+NSString * const DDCheckUpdateNotification = @"DDCheckUpdateNotification" ;

@@ -7,7 +7,7 @@
 //
 
 #import "SignInViewController.h"
-
+#import "DDTaskManager.h"
 @interface SignInViewController ()
 
 @end
@@ -30,7 +30,10 @@
 {
 //    [self.navigationController.view removeFromSuperview] ;
 //    [self.navigationController removeFromParentViewController] ;
-    [self dismissViewControllerAnimated:YES completion:nil] ;
+
+    [self dismissViewControllerAnimated:NO completion:^{
+        [DDTaskManager executeAllTasks] ;
+    }] ;
 }
 
 - (void)signIn:(id)sender
