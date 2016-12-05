@@ -6,13 +6,8 @@
 //  Copyright © 2016年 ZhangXiaodong. All rights reserved.
 //
 #import <UIKit/UIKit.h>
-#import "DDTabbarController.h"
+
 @interface RootViewController : UIViewController
-@property(nonatomic, weak) DDTabbarController * tabbarVC ;
 + (instancetype)sharedViewController ;
-
++ (UIViewController *)currentMainViewController ;
 @end
-
-FOUNDATION_EXPORT NSString * const DDNotLoginNotification ;
-FOUNDATION_EXPORT NSString * const DDCheckLoginNotification ;
-FOUNDATION_EXPORT NSString * const DDCheckUpdateNotification ;

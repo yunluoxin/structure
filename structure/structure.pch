@@ -1,0 +1,16 @@
+//
+//  structure.pch
+//  structure
+//
+//  Created by dadong on 16/12/2.
+//  Copyright © 2016年 ZhangXiaodong. All rights reserved.
+//
+
+#ifndef structure_pch
+#define structure_pch
+#ifdef __OBJC__
+
+#import "DDNotifications.h"
+
+#endif
+#endif /* structure_pch */

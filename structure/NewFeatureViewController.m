@@ -9,7 +9,10 @@
 #import "NewFeatureViewController.h"
 
 @interface NewFeatureViewController ()
-
+{
+    //状态栏原始状态
+    BOOL statusBarOriginStatus ;
+}
 @end
 
 @implementation NewFeatureViewController
@@ -17,7 +20,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [UIApplication sharedApplication].statusBarHidden = YES ;
     self.view.backgroundColor = [UIColor whiteColor] ;
     
     UILabel * label = [[UILabel alloc] initWithFrame:self.view.bounds] ;
@@ -29,14 +31,24 @@
     label.textAlignment = NSTextAlignmentCenter ;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated] ;
+    statusBarOriginStatus = [UIApplication sharedApplication].isStatusBarHidden ;
+    [UIApplication sharedApplication].statusBarHidden = YES ;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [UIApplication sharedApplication].statusBarHidden = statusBarOriginStatus ;
+    [super viewWillDisappear:animated] ;
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     [self removeFromParentViewController] ;
     [self.view removeFromSuperview] ;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:DDCheckLoginNotification object:nil] ;
 }
 @end

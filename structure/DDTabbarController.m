@@ -36,5 +36,9 @@
     self.viewControllers = @[nav, nav2] ;
 }
 
-
+- (void)viewDidDisappear:(BOOL)animated
+{
+    NSLog(@"viewDidDisappear--%@",self.presentedViewController) ;
+    [super viewDidDisappear:animated] ;
+}
 @end
