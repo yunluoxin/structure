@@ -2,15 +2,28 @@
 //  structure.pch
 //  structure
 //
+<<<<<<< HEAD
 //  Created by dadong on 16/12/2.
+=======
+//  Created by ZhangXiaodong on 16/12/3.
+>>>>>>> b166ec63e652f3525315ca7290d6c9836e2e09f4
 //  Copyright © 2016年 ZhangXiaodong. All rights reserved.
 //
 
 #ifndef structure_pch
 #define structure_pch
+<<<<<<< HEAD
 #ifdef __OBJC__
 
 #import "DDNotifications.h"
+=======
+
+#ifdef __OBJC__
+
+#import "UrlRounter.h"
+#import "RootViewController.h"
+#import "UIViewController+UrlRounter.h"
+>>>>>>> b166ec63e652f3525315ca7290d6c9836e2e09f4
 
 #endif
 #endif /* structure_pch */

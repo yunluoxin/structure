@@ -10,4 +10,6 @@
 
 @interface PersonInfomationViewController : UIViewController
 
+@property (nonatomic, copy) NSString * name ;
+
 @end
